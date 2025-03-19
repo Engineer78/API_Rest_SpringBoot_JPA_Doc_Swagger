@@ -1,0 +1,3 @@
+Para poder visualizar la documentación de está APPI Rest debe ejecutar la API en su ordenador desde su IDE predilecto,
+recomendamos Intellij Idea, luego de que la API Rest este en funcionamiento,
+ingrese a la siguiente URL: http://localhost:8080/swagger-ui/index.html
