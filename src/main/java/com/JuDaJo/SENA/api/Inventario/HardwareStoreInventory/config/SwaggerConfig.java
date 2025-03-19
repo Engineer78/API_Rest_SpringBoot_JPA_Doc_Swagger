@@ -13,7 +13,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API REST de Inventario-hardwareStoreInventory")
+                        .title("API REST de Inventario-Hardware Store Inventory FFIG")
                         .version("1.0")
                         .description("Documentación de la API REST para gestionar el inventario de la ferreteria FFIG \n\n"
                                 + "Esta API utiliza las siguientes herramientas:\n"
