@@ -2,6 +2,7 @@
 Este proyecto consiste en la creación de una API REST utilizando Spring Boot, desarrollada como parte del programa Hardware Store Inventory FFIG, específicamente para gestionar el módulo de inventario de una ferretería.
 
 📋 Descripción
+
 La API ofrece funcionalidades para:
 
 Gestionar proveedores, categorías, productos y las relaciones entre ellos.
@@ -15,6 +16,7 @@ Adicionalmente, la documentación de la API se genera automáticamente utilizand
 Este proyecto fue diseñado como un trabajo formativo y colaborativo en el marco del SENA Centro de Comercio y Turismo de Armenia - Regional Quindío.
 
 🌟 Estructura del Proyecto
+
 El desarrollo se realizo por el equipo de desarrollo:
 
 develop1: Joaquín H. Jiménez Rosas (Ficha 2879723)
@@ -26,6 +28,7 @@ develop3: David Ricardo Graffe Rodríguez (Ficha 2879724)
 Además, la generación de la documentación se configuró mediante la clase SwaggerConfig, que define las especificaciones iniciales, y la clase OpenApiExporter, que guarda el archivo de documentación en formato JSON dentro de la estructura del proyecto.
 
 📚 Propósito Formativo
+
 Este proyecto tiene como objetivo formar habilidades en:
 
 Diseño y desarrollo de APIs REST utilizando Spring Boot.
@@ -39,6 +42,7 @@ Aplicación de conceptos básicos de arquitectura y gestión de proyectos de sof
 Instructor a cargo: Carlos Alberto Fuel Tulcan, del SENA Centro de Comercio y Turismo - Regional Quindío.
 
 🛠️ Tecnologías Utilizadas
+
 Lenguaje de programación: Java
 
 Framework: Spring Boot
@@ -52,6 +56,7 @@ Control de versiones: Git / GitHub
 Documentación: Swagger y SpringDoc (implementados para generar automáticamente la interfaz y los esquemas OpenAPI).
 
 🚀 Configuración e Instalación
+
 Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 Clona este repositorio:
@@ -77,6 +82,7 @@ Explora la documentación de la API: Una vez que la API esté ejecutándose, dir
 http://localhost:8080/swagger-ui/index.html
 
 👥 Contribuidores
+
 Joaquín H. Jiménez Rosas - develop1 (Ficha 2879723)
 
 Juan David Gallego López - develop2 (Ficha 2879723)
