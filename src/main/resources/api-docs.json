@@ -1,0 +1,874 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API REST de Inventario-Hardware Store Inventory FFIG",
+    "description": "Documentación de la API REST para gestionar el inventario de la ferretería FFIG. \n\n### Colaboradores del proyecto:\n- **David Ricardo Graffe Rodríguez, Ficha:2879724**\n- **Joaquín Humberto Jiménez Rosas, Ficha:2879723**\n- **Juan David Gallego López, Ficha:2879723**\n\n### Repositorio GitHub: \n- **Git Hub**: [Ver repositorio](https://github.com/Engineer78/API_Rest_SpringBoot_JPA_Doc_Swagger)\n### Herramientas utilizadas:\n- **Java JDK17**: [Descargar aquí](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)\n- **Spring Boot 3.4.3**: [Visita Spring Initializr](https://start.spring.io/)\n- **MySQL 9.1.0**: [Descargar desde MySQL Archives](https://downloads.mysql.com/archives/community/)",
+    "contact": {
+      "name": "Joaquín Humberto Jiménez Rosas",
+      "email": "Joaquin_Jimenez@soy.sena.edu.co"
+    },
+    "license": {
+      "name": "JuDaJo - Sena Centro de Comercio y Turismo Armenía, Regional Quindío 2024 - 2025",
+      "url": "https://www.sena.edu.co"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/proveedores/{id}": {
+      "get": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "obtenerProveedor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "actualizarProveedor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProveedorDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "eliminarProveedor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/productos/{idProducto}": {
+      "get": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "getProductoById",
+        "parameters": [
+          {
+            "name": "idProducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "updateProducto",
+        "parameters": [
+          {
+            "name": "idProducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "deleteProducto",
+        "parameters": [
+          {
+            "name": "idProducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/producto-proveedor/{id}": {
+      "put": {
+        "tags": [
+          "producto-proveedor-controller"
+        ],
+        "operationId": "actualizarProductoProveedor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoProveedorDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "producto-proveedor-controller"
+        ],
+        "operationId": "eliminarProductoProveedor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/categorias/{id}": {
+      "get": {
+        "tags": [
+          "categoria-controller"
+        ],
+        "operationId": "obtenerCategoria",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "categoria-controller"
+        ],
+        "operationId": "actualizarCategoria",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriaDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "categoria-controller"
+        ],
+        "operationId": "eliminarCategoria",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/proveedores": {
+      "get": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "listarProveedores",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProveedorDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "crearProveedor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProveedorDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/productos": {
+      "get": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "getAllProductos",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductoDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "addProducto",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoCreationDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/producto-proveedor": {
+      "post": {
+        "tags": [
+          "producto-proveedor-controller"
+        ],
+        "operationId": "crearProductoProveedor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductoProveedorDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/categorias": {
+      "get": {
+        "tags": [
+          "categoria-controller"
+        ],
+        "operationId": "listarCategorias",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoriaDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "categoria-controller"
+        ],
+        "operationId": "crearCategoria",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoriaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/proveedores/nit/{nitProveedor}": {
+      "get": {
+        "tags": [
+          "proveedor-controller"
+        ],
+        "operationId": "buscarProveedorPorNit",
+        "parameters": [
+          {
+            "name": "nitProveedor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProveedorDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/productos/codigo/{codigoProducto}": {
+      "get": {
+        "tags": [
+          "producto-controller"
+        ],
+        "operationId": "getProductoByCodigo",
+        "parameters": [
+          {
+            "name": "codigoProducto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProveedorDTO": {
+        "required": [
+          "nitProveedor",
+          "nombreProveedor"
+        ],
+        "type": "object",
+        "properties": {
+          "idProveedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreProveedor": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nitProveedor": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "telefonoProveedor": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string"
+          },
+          "direccionProveedor": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      },
+      "Categoria": {
+        "required": [
+          "nombreCategoria"
+        ],
+        "type": "object",
+        "properties": {
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreCategoria": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            }
+          }
+        }
+      },
+      "Producto": {
+        "required": [
+          "categoria",
+          "codigoProducto",
+          "nombreProducto"
+        ],
+        "type": "object",
+        "properties": {
+          "idProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreProducto": {
+            "type": "string"
+          },
+          "cantidad": {
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "valorUnitarioProducto": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/Categoria"
+          },
+          "productoProveedores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoProveedor"
+            }
+          }
+        }
+      },
+      "ProductoProveedor": {
+        "type": "object",
+        "properties": {
+          "idProductoProveedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "producto": {
+            "$ref": "#/components/schemas/Producto"
+          },
+          "proveedor": {
+            "$ref": "#/components/schemas/Proveedor"
+          },
+          "precioCompra": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Proveedor": {
+        "required": [
+          "nitProveedor",
+          "nombreProveedor"
+        ],
+        "type": "object",
+        "properties": {
+          "idProveedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreProveedor": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nitProveedor": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "telefonoProveedor": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string"
+          },
+          "direccionProveedor": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "productoProveedores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoProveedor"
+            }
+          }
+        }
+      },
+      "ProductoProveedorDTO": {
+        "required": [
+          "idProducto",
+          "idProveedor"
+        ],
+        "type": "object",
+        "properties": {
+          "idProductoProveedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProveedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioCompra": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "CategoriaDTO": {
+        "required": [
+          "nombreCategoria"
+        ],
+        "type": "object",
+        "properties": {
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreCategoria": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "valid": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProductoCreationDTO": {
+        "required": [
+          "idCategoria",
+          "idProveedor",
+          "producto"
+        ],
+        "type": "object",
+        "properties": {
+          "producto": {
+            "$ref": "#/components/schemas/ProductoDTO"
+          },
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProveedor": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ProductoDTO": {
+        "required": [
+          "codigoProducto",
+          "nombreProducto"
+        ],
+        "type": "object",
+        "properties": {
+          "idProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoProducto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreProducto": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "valorUnitarioProducto": {
+            "type": "number",
+            "format": "double"
+          },
+          "nombreCategoria": {
+            "type": "string"
+          },
+          "productoProveedores": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "valorTotalProducto": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    }
+  }
+}
