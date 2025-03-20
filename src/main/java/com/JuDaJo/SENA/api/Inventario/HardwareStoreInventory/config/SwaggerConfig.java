@@ -24,7 +24,8 @@ public class SwaggerConfig {
                                 .name("JuDaJo - Sena Centro de Comercio y Turismo Armenía, Regional Quindío 2024 - 2025"))
                         .contact(new Contact()
                                 .name("David Ricardo Graffe Rodríguez Ficha: 2879724, Joaquín Humberto Jiménez Rosas y Juan David Gallego López Ficha: 2879723")
-                                .email("Joaquin_Jimenez@soy.sena.edu.co"))
+                                .email("Joaquin_Jimenez@soy.sena.edu.co")
+                                .url("https://github.com/Engineer78/API_Rest_SpringBoot_JPA_Doc_Swagger.git"))
                 );
     }
 }
